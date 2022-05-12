@@ -17,23 +17,47 @@ To install, just clone this repository and analysis codes repository:
 
 `$ cd hte_degradation_chamber`
 
-Assembly and use of a degradation chamber:
-- Degradation_chamber_SOP.pdf
+Assembly of the degradation chamber:
 
-Installation of software:
-- Install LabVIEW.
-- Install ThorLabs control software and programming interface for camera
-- Open LabVIEW and run the desired version of the camera control program.
-  - V4: Current standard version.
-  - V5: Same but with automated control of lamp intensity.
-  - SimpleLive: Run this if you don't want to save any images.
-- Install Arduino programming interface.
-- Open Arduino programming interface and run the humidity control program.
-  - Fan_humidityControl.ino
+- Assembly_instructions.pdf
+
+Installation of software in Windows 10 64-bit:
+
+- Camera control and optional lamp intensity control
+  - Connect the lamp and camera to the laptop according to the instructions in Assembly_instructions.pdf.
+  - Install LabVIEW.
+  - Install ThorLabs control software (ThorCam) and programming interface (Windows SDK for DCx cameras, specifically the LabVIEW interface) for the camera according to the instructions from ThorLabs.
+    - This setup has been implemented for ThorLabs DCC1645C camera.
+    - Software available for download in: https://www.thorlabs.com/thorProduct.cfm?partNumber=DCC1645C
+    - This setup has been implemented using ThorCam Version 3.6.2. and Windows SDK for DCx cameras version 4.80.
+  - Check according to the instructions in the ThorLabs camera manual that the camera is visible via ThorCam software. This indicates a successful installation of the drivers and software.
+  - Open LabVIEW and run the desired version of the camera control program.
+    - Camera_control_v4.vi: Current standard version. Controls the camera and saving of the pictures taken.
+    - Camera_control_v5.vi: Same but expanded with automated control of lamp intensity (for dark testing or for low intensity testing). Lamp.vi is a sub-vi required by this control program.
+    - Note: DCx_Camera_SDK/OtherDrivers/LabVIEW/uc480.NET/uc480_SimpleLive.vi: This standalone vi is included in the ThorLabs SDK and provides live image feed without saving any images. It is useful for testing camera settings.
+- Humidity control
+- Connect the humidity-temperature sensor and Arduino to the laptop according to the instructions in Assembly_instructions.pdf.
+  - Install Arduino programming interface according to the instructions from Arduino.
+    - This setup has been implemented for Arduino Uno Rev2 SMD controller.
+    - Arduino IDE software available for download: https://www.arduino.cc/en/software
+    - This setup has been implemented using Arduino IDE version 1.8.x for Windows 10.
+  - Install Arduino control libraries for the humidity-temperature sensor.
+    - This setup has been implemented for Adafruit Si7021 humidity-temperature sensor.
+    -  In Arduino IDE: Open Sketch - Include Library - Manage libraries. Type in "Adafruit Si7021" and choose Install. Type in "Adafruit Unified Sensor" and choose Install.
+    -  This setup has been implemented using Adafruit Si7021 library version X and Adafruit Unififed Sensor library version X.
+  - Open Arduino programming interface and run the humidity control program.
+    - Humidity_control_via_fan_v20210120.ino
+
+Use of the degradation chamber:
+
+- Manual.pdf
 
 Analysis of the resulting picture data:
-- Automated code in: https://github.com/PV-Lab/RGBanalysis
-- The code produces both color calibrated and raw color data as a function of measurement time. The use of color calibration is essential for ensuring repeatable and reproducible results. Approach implemented is described in detail in the ESI of the following article: https://doi.org/10.1016/j.matt.2021.01.008
+
+- Automated code with detailed instructions in: https://github.com/PV-Lab/RGBanalysis
+- The code assumes 28 rectangular films with similar shape are being degraded on a sample holder in the picture area.
+- The code slices the pictures to sub-pictures that contain only the individual samples, calculates the average color of each sample in red-green-blue (RGB) and LAB colors, and produces color vs. time csv files, pdfs of the degradation curves, and videos of the degrading samples as the outputs.
+- The code produces both color calibrated and raw color data as a function of measurement time. The use of color calibration is essential for ensuring repeatable and reproducible results. The approach implemented here utilizes three-dimensional thin plate spline transformation and XRite ColorChecker Passport as a reference color chart with known colors. The color calibration process is described in detail in the ESI of this article: https://doi.org/10.1016/j.matt.2021.01.008
 
 ## Authors
 ||                    |
@@ -46,7 +70,7 @@ Analysis of the resulting picture data:
 ## Attribution
 
 License information:
-- uc480_XX.vi files are part of the programming interface of ThorLabs cameras that is distributed by ThorLabs. These files are included only to aid debugging in case that a newer programming interface for these cameras is installed. All the use of these files follows the licensing defined by ThorLabs and should be considered separately for the rest of the material in this repository.
+- uc480_XX.vi files are part of the programming interface of ThorLabs cameras that is distributed by ThorLabs.
 - All the other content and the implementation of aging chambers according to the instructions described here is under MIT license.
 
 If you implement aging chambers or use the codes distributed in this repository, please acknowledge use of this work with the appropiate citation to the repository and research article.
