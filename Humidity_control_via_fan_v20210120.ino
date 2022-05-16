@@ -1,20 +1,25 @@
  //   =====================================================================================================
 //   ================================          USER INPUT        =========================================
 //   =====================================================================================================
-float Desired_Humidity = 87; // When modifying, press Upload and wait until it says "Done uploading" at the
+
+float Desired_Humidity = 87; // Target air humidity in percentage value.
+// Note: The humidity control setup operates via increasing air humidity from the initial value. Relative
+// air humidities that are lower than that cannot be reached.
+// Note: When altering the value, press Upload and wait until Arduino IDE reports "Done uploading" at the
 // bottom of the screen (turquoise line). There should be only white text in the box with black background.
-// If there is text with orange/red color, just press Verify and Upload again. After you get "Done
-// uploading", Press Tools - Serial monitor to get the prin outs visible. Arduino should start printing
-// values in a couple of seconds.
-float Tolerance = 0.0; //turn blade off at Desired_Humidity-Tolerance
-// Current file 20190802
+// If there is text with orange/red color, press Verify and Upload again. After you get "Done
+// uploading", Press Tools - Serial monitor to get the print outs visible. Arduino should start printing
+// out values in a couple of seconds.
+
+float Tolerance = 0.0; // Turn the evaporation fan off at Desired_Humidity-Tolerance. Default value is 0%.
 
 //   =====================================================================================================
 //   ========================       SENSOR LIBRARY AND DECLARATION           =============================
 //   =====================================================================================================
-//You need to include these libraries which requires "Adafruit Si7021 Library" to be installed
-//To install, go to Sketch -> Include Library -> Manage Libraries. Look up "Adafruit Si7021 Library"
-//And click install
+
+// Libraries required. These libraries which requires  to be installed
+// To install "Adafruit Si7021 Library", go to Sketch -> Include Library -> Manage Libraries. Look up
+// "Adafruit Si7021 Library" and click install.
 #include "Adafruit_Si7021.h"
 Adafruit_Si7021 sensor = Adafruit_Si7021(); //Declare the sensor and call it 'sensor'
 
@@ -22,23 +27,26 @@ Adafruit_Si7021 sensor = Adafruit_Si7021(); //Declare the sensor and call it 'se
 //   =====================================================================================================
 //   ==================      VARIABLE DECLARATION/ASSIGNMENT/CALCULATION         =========================
 //   =====================================================================================================
+
 #define DEBUG
  
 #define SolenoidPin 4  //pin 4 is ideal for this use
 #define LED 13
-float initial_wait_time = 30000; //time from pluggin arduino in to first time valve turns on
-float h; //humidity reading
-float error_h;
-float pre_h = 0;
-float diff_h = 0;
-float loop_time = 5000; //Time before system responds again
-float initial_diff_sensitivity = 1.25; //responds when diff_h is below this value after loop_time seconds
+float initial_wait_time = 30000; // Time (in milliseconds) from plugging Arduino in to the first time valve turns on.
+float h; // Humidity reading (%)
+float error_h; // The deviation of the current humidity value from the target humidity.
+float pre_h = 0; // Humidity reading at the beginning of the loop.
+float diff_h = 0; // The difference in the humidity reading between the beginning and end of the loop.
+float loop_time = 5000; // Time (in milliseconds) before the system responds again
+float initial_diff_sensitivity = 1.25; // The system responds when diff_h is below this value after loop_time milliseconds
 float steady_diff_sensitivity = .5;
 float differencial_sensitivity = initial_diff_sensitivity;
-float time_valve_is_on = 5000;//in microseconds, how long does the valve turn on?
+float time_valve_is_on = 5000; // The time (in milliseconds) that the valve remains on during each round of
+// the loop. Default value 5000.
 float stable_inflow_time = 5000; 
 bool stable = false;
-float max_on_time = 30000;  //In the initial path to getting stable, max RH introduced per logic loop
+float max_on_time = 30000;  // The time (in milliseconds) that the valve can remain on continuously during
+// the initial path to ramping up the air humidity. Default value 30000.
 float error_percentage = .10; //percentage of target error that triggers between diff sensitivities
 //PrintWriter output;
 
@@ -50,12 +58,13 @@ float error_percentage = .10; //percentage of target error that triggers between
 void setup() {
   
   Serial.begin(9600);
-  while (!Serial) {   // wait for serial port to open
+  while (!Serial) {   // Wait for serial port to open.
     delay(10);
   }
-  sensor.begin();//initialize sensor Si7021
-  pinMode(SolenoidPin,OUTPUT); //Initialize the pin where the solenoid is connected (declared top of the file)
-  pinMode(LED,OUTPUT);
+  sensor.begin(); // Initialize sensor Si7021.
+  pinMode(SolenoidPin,OUTPUT); // Initialize the pin where the solenoid is connected
+  // (declared top of the file).
+  pinMode(LED,OUTPUT); // Initialize the pin where the indicator LED is connected (declared top of the file).
 
   #ifdef DEBUG
     Serial.print("Target Relative Humidity: ");
@@ -69,7 +78,7 @@ void setup() {
     Serial.println(" minutes)");
   #endif
   pre_h = sensor.readHumidity();
-  delay(initial_wait_time); //Initial wait time for system to start
+  delay(initial_wait_time); // Initial wait time for the system to start
   
 }
 
@@ -78,6 +87,7 @@ void loop() {
 //   =====================================================================================================
 //   =============================    CALCULATE CONTROL VARIABLES      ===================================
 //   =====================================================================================================
+  
   h = sensor.readHumidity();
   error_h = Desired_Humidity - h;
   diff_h = (h - pre_h);
@@ -87,16 +97,15 @@ void loop() {
     Serial.print("Current RH:  ");
     Serial.print(h);
     Serial.print("%     ");
-    Serial.print("Error RH:  ");
+    Serial.print("Error in RH:  ");
     Serial.print(error_h);
     Serial.print("%     ");    
-    Serial.print("Change in RH:  ");
+    Serial.print("Change in RH in the previous step:  ");
     Serial.print(diff_h);
     Serial.println("%");
   #endif
-
-  
-  delay(1000);  //short delay to make sure we don't take readings too fast (could mess up the sensor if not)
+ 
+  delay(1000);  // Short delay to make sure we don't take readings too fast (could mess up the sensor).
 
 //   =====================================================================================================
 //   =========================    DECISION MAKING (TURN ON OR WAIT)      =================================
@@ -175,14 +184,14 @@ void loop() {
   */
 
   if (h < (Desired_Humidity-Tolerance)) {
-    digitalWrite(SolenoidPin,HIGH);
+    digitalWrite(SolenoidPin,HIGH); // Turn the valve on.
   }
   else {
-    digitalWrite(SolenoidPin,LOW);
+    digitalWrite(SolenoidPin,LOW); // Turn the valve off.
   }
   
     
-    delay(loop_time); //wait two minute before going back to make another decision
+    delay(loop_time); // Wait for the pre-set duration before going back to make another decision step.
 
   pre_h = h;
 
