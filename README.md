@@ -26,25 +26,26 @@ Installation of software in Windows 10 64-bit:
 - Camera control and optional lamp intensity control
   - Connect the lamp and camera to the laptop according to the instructions in Assembly_instructions.pdf.
   - Install LabVIEW.
+    - This setup has been implemented with LabVIEW 2018 version 18.0.
   - Install ThorLabs control software (ThorCam) and programming interface (Windows SDK for DCx cameras, specifically the LabVIEW interface) for the camera according to the instructions from ThorLabs.
     - This setup has been implemented for ThorLabs DCC1645C camera.
     - Software available for download in: https://www.thorlabs.com/thorProduct.cfm?partNumber=DCC1645C
-    - This setup has been implemented using ThorCam Version 3.6.2. and Windows SDK for DCx cameras version 4.80.
+    - This setup has been implemented using ThorCam Version 3.2.1. and Windows SDK for DCx cameras version 4.80.
   - Check according to the instructions in the ThorLabs camera manual that the camera is visible via ThorCam software. This indicates a successful installation of the drivers and software.
   - Open LabVIEW and run the desired version of the camera control program.
     - Camera_control_v4.vi: Current standard version. Controls the camera and saving of the pictures taken.
     - Camera_control_v5.vi: Same but expanded with automated control of lamp intensity (for dark testing or for low intensity testing). Lamp.vi is a sub-vi required by this control program.
     - Note: DCx_Camera_SDK/OtherDrivers/LabVIEW/uc480.NET/uc480_SimpleLive.vi: This standalone vi is included in the ThorLabs SDK and provides live image feed without saving any images. It is useful for testing camera settings.
 - Humidity control
-- Connect the humidity-temperature sensor and Arduino to the laptop according to the instructions in Assembly_instructions.pdf.
+  - Connect the humidity-temperature sensor and Arduino to the laptop according to the instructions in Assembly_instructions.pdf.
   - Install Arduino programming interface according to the instructions from Arduino.
     - This setup has been implemented for Arduino Uno Rev2 SMD controller.
     - Arduino IDE software available for download: https://www.arduino.cc/en/software
-    - This setup has been implemented using Arduino IDE version 1.8.x for Windows 10.
+    - This setup has been implemented using Arduino IDE version 1.8.9 for Windows 10.
   - Install Arduino control libraries for the humidity-temperature sensor.
     - This setup has been implemented for Adafruit Si7021 humidity-temperature sensor.
     -  In Arduino IDE: Open Sketch - Include Library - Manage libraries. Type in "Adafruit Si7021" and choose Install. Type in "Adafruit Unified Sensor" and choose Install.
-    -  This setup has been implemented using Adafruit Si7021 library version X and Adafruit Unififed Sensor library version X.
+    -  This setup has been implemented using Adafruit Si7021 library version 1.2.0 and Adafruit Unififed Sensor library version X.
   - Open Arduino programming interface and run the humidity control program.
     - Humidity_control_via_fan_v20210120.ino
 
