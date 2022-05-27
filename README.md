@@ -47,7 +47,7 @@ Installation of software in Windows 10 64-bit:
     -  In Arduino IDE: Open Sketch - Include Library - Manage libraries. Type in "Adafruit Si7021" and choose Install. Type in "Adafruit Unified Sensor" and choose Install.
     -  This setup has been implemented using Adafruit Si7021 library version 1.2.0 and Adafruit Unififed Sensor library version X.
   - Open Arduino programming interface and run the humidity control program.
-    - Humidity_control_via_fan_v20210120.ino
+    - Humidity_control_via_fan_v20220516/Humidity_control_via_fan_v20220516.ino
 - Humidity tracking
   - Install EasyLog Humidity Tracker App according to the instructions from Lascar Electronics.
 	- This setup has been implemented for Lascar Electronics EL-USB-2 sensor.
