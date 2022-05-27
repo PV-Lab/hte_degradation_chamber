@@ -29,7 +29,7 @@ Installation of software in Windows 10 64-bit:
     - This setup has been implemented with LabVIEW 2018 version 18.0.
   - Install ThorLabs control software (ThorCam) and programming interface (Windows SDK for DCx cameras, specifically the LabVIEW interface) for the camera according to the instructions from ThorLabs.
     - This setup has been implemented for ThorLabs DCC1645C camera.
-    - Software available for download in: https://www.thorlabs.com/thorProduct.cfm?partNumber=DCC1645C
+    - Software available for download in: https://www.thorlabs.com/software_pages/viewsoftwarepage.cfm?code=ThorCam
     - This setup has been implemented using ThorCam Version 3.2.1. and Windows SDK for DCx cameras version 4.80.
   - Check according to the instructions in the ThorLabs camera manual that the camera is visible via ThorCam software. This indicates a successful installation of the drivers and software.
   - Open LabVIEW and run the desired version of the camera control program.
