@@ -19,7 +19,7 @@ To install, just clone this repository and analysis codes repository:
 
 Assembly of the degradation chamber:
 
-- Assembly_instructions.pdf
+- MIT Gen 1 Chamber Build Guide.docx
 
 Installation of software in Windows 10 64-bit:
 
@@ -37,7 +37,7 @@ Installation of software in Windows 10 64-bit:
     - Camera_control_v5.vi: Same but expanded with automated control of lamp intensity (for dark testing or for low intensity testing). Lamp.vi is a sub-vi required by this control program.
     - Note: DCx_Camera_SDK/OtherDrivers/LabVIEW/uc480.NET/uc480_SimpleLive.vi: This standalone vi is included in the ThorLabs SDK and provides live image feed without saving any images. It is useful for testing camera settings.
 - Humidity control
-  - Connect the humidity-temperature sensor and Arduino to the laptop according to the instructions in Assembly_instructions.pdf.
+  - Connect the humidity-temperature sensor and Arduino to the laptop according to the instructions in MIT Gen 1 Chamber Build Guide.docx.
   - Install Arduino programming interface according to the instructions from Arduino.
     - This setup has been implemented for Arduino Uno Rev2 SMD controller.
     - Arduino IDE software available for download: https://www.arduino.cc/en/software
