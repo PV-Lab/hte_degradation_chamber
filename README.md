@@ -9,7 +9,7 @@ This chamber has capability of controlling temperature of the samples, humidity 
 
 ## Installation
 
-To install, just clone this repository and analysis codes repository:
+To install, just clone this repository and analysis codes repository. Either download the repository as a ZIP file, or use git:
 
 `$ git clone https://github.com/PV-Lab/hte_degradation_chamber.git`
 
