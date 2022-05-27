@@ -48,10 +48,14 @@ Installation of software in Windows 10 64-bit:
     -  This setup has been implemented using Adafruit Si7021 library version 1.2.0 and Adafruit Unififed Sensor library version X.
   - Open Arduino programming interface and run the humidity control program.
     - Humidity_control_via_fan_v20210120.ino
+- Humidity tracking
+  - Install EasyLog Humidity Tracker App according to the instructions from Lascar Electronics.
+	- This setup has been implemented for Lascar Electronics EL-USB-2 sensor.
+	- EasyLog App is available for download: https://www.lascarelectronics.com/software/easylog-software/easylog-usb
 
 Use of the degradation chamber:
 
-- Manual.pdf
+- MIT Gen 1 Chamber build guide.docx
 
 Analysis of the resulting picture data:
 

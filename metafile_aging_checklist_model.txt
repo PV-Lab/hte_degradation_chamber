@@ -1,0 +1,74 @@
+Fill in the gaps marked by [description].
+
+PROJECT [name] AGING TEST #[order number]
+
+Initial preparations by: [researcher initials]
+
+[time date] I stopped the humidity meter, collected the data and and saved it as [folder name, e.g. YYYYMMDD-RX-FS20190622-R1-JT], and restarted the humidity meter. I disconnected the USB cable of the humidity meter, and checked that the green LED of the humidity meter blinks in every 1 min.
+[time date] chamber humidity [value]%, temperature [value]C
+
+[time date] I started the camera control program. Settings for the camera are [aperture/shutter speed,ISO - use the same setting during the whole project], the data is saved into the same folder than this file in every [interval length] min.
+[time date] I turned the lamp on. I removed the sample holder from the picture area, but left the insulating pad there. I placed the Xrite color chart to the picture area so that its lower left corner (i.e., the corner with white color patch) is aligned with the green tapes marking the sample area and it is aligned straight in the live stream of the camera program.
+[time date] I turned on the large fans. I nulled the timer and filled the water container until the level marked in the container. I checked that there are no wires that would cause shadows or reflections on the samples.
+[time date] I opened one of the color chart pictures with Gnu Image Manipulation Program (GIMP) and used Colors - Map - Color Exchange for checking that the white color patch is not oversaturated. I did not save the changes into the picture.
+
+Putting the samples in:
+
+[time date] I inserted all the samples in and logged the sample order at the end of this file.
+[time date] I checked that the sample holder is aligned straight in the picture and it is positioned into the sample area (green tapes).
+[time date] I turned on the sample holder heating, started the timer, and turned on the humidity control system that is set to [temperature value]C.
+[time date] I closed the lid
+[time date] curtain on 
+(ASAP after curtain is on) [time date] temperature reading [value]C, humidity reading [value]%, sample holder T is [value]C.
+(10 minutes after curtain is on) [time date] temperature reading [value]C, humidity reading [value]%, sample holder T is [value]C. I have checked that the files appear in the folder and server/cloud connection works.  I opened Arduino/Tools/System monitor and checked that the humidity control system reads a valid number (i.e., humidity below 100%).
+([value] mins after curtain is on) [time date] temperature reading [value]C, humidity reading [value]%, sample holder T is [value]C.
+(1 hour after curtain is on) [time date] Temperature reading is [value]C, humidity reading is [value]%, sample holder is [value]C
+
+----------------------------------
+
+Stopping the aging test by: [researcher initials]
+
+[time date] test ends after [value]h [value]min. Temperature reading [value]C, humidity reading [value]%, sample holder T is [value]C. Fan is running. Everything looks [describe, ok or e.g. condensation, something wrong?].
+
+----------------------------------
+
+Sample order:
+
+Sample preparation batch: [unique identifier for sample batch]
+
+Row (letter) from top to down - Column (number) from left to right when standing in front of the chamber
+
+(D-1 is in the top left corner and A-7 in the bottom right corner in the images)
+
+A-1 [unique ID, composition, comments]
+A-2 [unique ID, composition, comments]
+A-3 [unique ID, composition, comments]
+A-4 [unique ID, composition, comments]
+A-5 [unique ID, composition, comments]
+A-6 [unique ID, composition, comments]
+A-7 [unique ID, composition, comments]
+
+B-1 [unique ID, composition, comments]
+B-2 [unique ID, composition, comments]
+B-3 [unique ID, composition, comments]
+B-4 [unique ID, composition, comments]
+B-5 [unique ID, composition, comments]
+B-6 [unique ID, composition, comments]
+B-7 [unique ID, composition, comments]
+
+C-1 [unique ID, composition, comments]
+C-2 [unique ID, composition, comments]
+C-3 [unique ID, composition, comments]
+C-4 [unique ID, composition, comments]
+C-5 [unique ID, composition, comments]
+C-6 [unique ID, composition, comments]
+C-7 [unique ID, composition, comments]
+
+D-1 [unique ID, composition, comments]
+D-2 [unique ID, composition, comments]
+D-3 [unique ID, composition, comments]
+D-4 [unique ID, composition, comments]
+D-5 [unique ID, composition, comments]
+D-6 [unique ID, composition, comments]
+D-7 [unique ID, composition, comments]
+
