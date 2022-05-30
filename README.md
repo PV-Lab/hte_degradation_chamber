@@ -3,9 +3,11 @@ hte_degradation_chamber
 
 ## Description
 
-This repository contains detailed instructions for building and using a low-cost, high-throughput aging test chamber. The instructions and control programs are shared in the hope of triggering more wide-spread aging testing among photovoltaic materials research as well as in other materials research fields.
+This repository contains detailed instructions for building and using a low-cost, high-throughput aging test chamber for perovskite materials. The instructions and control programs are shared to facilitate more wide-spread aging testing among photovoltaic materials research as well as in other materials research fields.
 
 This chamber has capability of controlling temperature of the samples, humidity of the degradation chamber, and illumination. Sample degradation can be followed by automated, color calibrated pictures. The implementation shown here accommodates 28 perovskite film samples. The aging chamber implemented according to the instructions typically $2,000-$5,000 depending on the amount of reused materials utilized in the process.
+
+This chamber is Generation 1 chamber in an open-hardware project for developing degradation chambers for perovskite materials. The project is described in detail in article: [insert details]
 
 ## Installation
 
@@ -76,8 +78,7 @@ Analysis of the resulting picture data:
 ## Attribution
 
 License information:
-- uc480_XX.vi files are part of the programming interface of ThorLabs cameras that is distributed by ThorLabs.
-- All the other content and the implementation of aging chambers according to the instructions described here is under MIT license.
+- The content in the repository under MIT license
 
 If you implement aging chambers or use the codes distributed in this repository, please acknowledge use of this work with the appropiate citation to the repository and research article.
 
@@ -89,5 +90,7 @@ If you implement aging chambers or use the codes distributed in this repository,
       howpublished = {\url{https://github.com/PV-Lab/hte_degradation_chamber}},
       year = {2020}
     }
+    
+    [insert article details here for the open hardware project]
     
     Shijing Sun, Armi Tiihonen, Felipe Oviedo, Zhe Liu, Janak Thapa, Yicheng Zhao, Noor Titan P. Hartono, Anuj Goyal, Thomas Heumueller, Clio Batali, Alex Encinas, Jason J. Yoo, Ruipeng Li, Zekun Ren, I. Marius Peters, Christoph J. Brabec, Moungi G. Bawendi, Vladan Stevanovic, John Fisher, Tonio Buonassisi, "A data fusion approach to optimize compositional stability of halide perovskites", Matter, 2021, https://doi.org/10.1016/j.matt.2021.01.008.
