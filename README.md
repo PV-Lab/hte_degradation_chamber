@@ -9,7 +9,7 @@ This chamber has capability of controlling temperature of the samples, humidity 
 
 This chamber is Generation 1 chamber in an open-hardware project for developing degradation chambers for perovskite materials. The project is described in detail in article: [insert details]
 
-![Degradation chamber generations in the open-hardware project. This repository describes MIT Gen. 1 chamber.](https://github.com/PV-Lab/hte_degradation_chamber/Chamber_generations.png)
+![Degradation chamber generations in the open-hardware project. This repository describes MIT Gen. 1 chamber.](https://github.com/PV-Lab/hte_degradation_chamber/blob/main/Chamber_generations.png)
 
 ## Installation
 
