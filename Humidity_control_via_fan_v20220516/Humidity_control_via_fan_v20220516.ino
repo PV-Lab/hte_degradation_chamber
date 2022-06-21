@@ -6,10 +6,12 @@
 
 
     Control air humidity in an aging chamber by turning on/off a computer fan (connected to pin 4) that evaporates
-    water from a container. An LED (connected to pin 13) is on when the system is running. It is recommendable to
-    enable serial monitor printouts to ensure that the system runs properly.
+    water from a container. An LED (connected to pin 13) is on when the system is running. Si7021 measures the air
+    humidity level. It is recommendable to enable serial monitor printouts to ensure that the system runs properly.
 
     The circuit:
+    
+    * See the build guide ( https://github.com/PV-Lab/hte_degradation_chamber ) for the circuit.
 
     Inputs:
     
@@ -18,7 +20,7 @@
     
     Outputs:
     
-    * GND: 3V power for the fan (-) via a transistor-resistor circuit.
+    * GND: 24V power for the fan (-) via a transistor-resistor circuit.
     * Digital pin 4: Control computer fan (on/off) via a transistor-resistor circuit.
     
     * Digital pin 13: LED (+)
@@ -28,13 +30,11 @@
     * 3V3: 3V power for Si7021 sensor.
     * GND: Ground for Si7021 sensor.
     
-    the fan (+). If the power is not sufficient, connect also an external power source.
-    
     Created 2019
 
     By Alex Encinas
 
-    Modified 16.4.2022
+    Modified 5/16/2022
 
     By Armi Tiihonen
 
@@ -104,7 +104,7 @@ void setup() {
   pinMode(LEDPin,OUTPUT); // Initialize the pin where the indicator LED is connected (declared top of the file).
 
   #ifdef DEBUG
-    Serial.print("Target Relative Humidity: ");
+    Serial.print("Targeted Relative Humidity: ");
     Serial.print(Desired_Humidity);
     Serial.println("%");
     Serial.print("Tolerance: +-");
@@ -134,10 +134,10 @@ void loop() {
     Serial.print("Current RH:  ");
     Serial.print(h);
     Serial.print("%     ");
-    Serial.print("Error in RH:  ");
+    Serial.print("Deviation in RH from the target level:  ");
     Serial.print(error_h);
     Serial.print("%     ");    
-    Serial.print("Change in RH in the previous step:  ");
+    Serial.print("Change in RH during the previous step:  ");
     Serial.print(diff_h);
     Serial.println("%");
   #endif
