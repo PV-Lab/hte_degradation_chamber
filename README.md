@@ -9,9 +9,11 @@ This chamber has capability of controlling temperature of the samples, humidity 
 
 This chamber is Generation 1 chamber in an open-hardware project for developing degradation chambers for perovskite materials. The project is described in detail in article: [insert details]
 
+![Degradation chamber generations in the open-hardware project. This repository describes MIT Gen. 1 chamber.]([https://myoctocat.com/assets/images/base-octocat.svg](https://github.com/PV-Lab/hte_degradation_chamber/Chamber_genrations.png))
+
 ## Installation
 
-To install, just clone this repository and analysis codes repository. Either download the repository as a ZIP file, or use git:
+To install, clone this repository and the analysis codes repository. Either download the repository as a ZIP file, or use git:
 
 `$ git clone https://github.com/PV-Lab/hte_degradation_chamber.git`
 
