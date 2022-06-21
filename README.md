@@ -7,7 +7,7 @@ This repository contains detailed instructions for building and using a low-cost
 
 This chamber has capability of controlling temperature of the samples, humidity of the degradation chamber, and illumination. Sample degradation can be followed by automated, color calibrated pictures. The implementation shown here accommodates 28 perovskite film samples. The aging chamber implemented according to the instructions typically $2,000-$5,000 depending on the amount of reused materials utilized in the process.
 
-This chamber is Generation 1 chamber in an open-hardware project for developing degradation chambers for perovskite materials. The project is described in detail in article: [insert details]
+This chamber is the Generation 1 chamber in an open-hardware project for developing degradation chambers for perovskite materials (see figure below). The project is described in detail in article: [insert details]
 
 ![Degradation chamber generations in the open-hardware project. This repository describes MIT Gen. 1 chamber.](https://github.com/PV-Lab/hte_degradation_chamber/blob/main/Chamber_generations.png)
 
