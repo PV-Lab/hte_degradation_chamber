@@ -23,7 +23,7 @@ To install, clone this repository and the analysis codes repository. Either down
 
 Assembly of the degradation chamber:
 
-- MIT Gen 1 Chamber Build Guide.docx
+- MIT Gen 1 Chamber Build Guide.docx and the CAD drawing Chamber_MIT_Gen1.step
 
 Installation of software in Windows 10 64-bit:
 
