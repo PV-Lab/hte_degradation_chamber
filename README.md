@@ -23,12 +23,12 @@ To install, clone this repository and the analysis codes repository. Either down
 
 Assembly of the degradation chamber:
 
-- MIT Gen 1 Chamber Build Guide.docx and the CAD drawing Chamber_MIT_Gen1.step
+- MIT Gen 1 Chamber Build Guide.pdf and the CAD drawing Chamber_MIT_Gen1.step
 
 Installation of software in Windows 10 64-bit:
 
 - Camera control and optional lamp intensity control
-  - Connect the lamp and camera to the laptop according to the instructions in Assembly_instructions.pdf.
+  - Connect the lamp and camera to the laptop according to the instructions in MIT Gen 1 Chamber Build Guide.pdf.
   - Install LabVIEW.
     - This setup has been implemented with LabVIEW 2018 version 18.0.
   - Install ThorLabs control software (ThorCam) and programming interface (Windows SDK for DCx cameras, specifically the LabVIEW interface) for the camera according to the instructions from ThorLabs.
@@ -42,7 +42,7 @@ Installation of software in Windows 10 64-bit:
     - Camera_control_v5.vi: Same but expanded with automated control of lamp intensity (for dark testing or for low intensity testing). Lamp.vi is a sub-vi required by this control program.
     - Note: DCx_Camera_SDK/OtherDrivers/LabVIEW/uc480.NET/uc480_SimpleLive.vi: This standalone vi is included in the ThorLabs SDK and provides live image feed without saving any images. It is useful for testing camera settings.
 - Humidity control
-  - Connect the humidity-temperature sensor and Arduino to the laptop according to the instructions in MIT Gen 1 Chamber Build Guide.docx.
+  - Connect the humidity-temperature sensor and Arduino to the laptop according to the instructions in MIT Gen 1 Chamber Build Guide.pdf.
   - Install Arduino programming interface according to the instructions from Arduino.
     - This setup has been implemented for Arduino Uno Rev2 SMD controller.
     - Arduino IDE software available for download: https://www.arduino.cc/en/software
@@ -60,7 +60,7 @@ Installation of software in Windows 10 64-bit:
 
 Use of the degradation chamber:
 
-- MIT Gen 1 Chamber build guide.docx
+- MIT Gen 1 Chamber build guide.pdf
 
 Analysis of the resulting picture data:
 
