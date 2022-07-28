@@ -13,6 +13,7 @@ This chamber is the Generation 1 chamber in an open-hardware project for develop
 
 ## Requirements
 
+Installation instructions have been devloped for:
 - Windows 10 64-bit or similar
 - CAD software
 - LabVIEW 2018 version 18.0
