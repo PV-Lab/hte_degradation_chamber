@@ -11,6 +11,14 @@ This chamber is the Generation 1 chamber in an open-hardware project for develop
 
 ![Degradation chamber generations in the open-hardware project. This repository describes MIT Gen. 1 chamber.](https://github.com/PV-Lab/hte_degradation_chamber/blob/main/Chamber_generations.png)
 
+## Requirements
+
+- Windows 10 64-bit or similar
+- CAD software
+- LabVIEW 2018 version 18.0
+- ThorCam Version 3.2.1. and Windows SDK for DCx cameras version 4.80
+- Arduino IDE version 1.8.9
+
 ## Installation
 
 To install, clone this repository and the analysis codes repository. Either download the repository as a ZIP file, or use git:
