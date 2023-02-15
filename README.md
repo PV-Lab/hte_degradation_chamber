@@ -7,7 +7,9 @@ This repository contains detailed instructions for building and using a low-cost
 
 This chamber has capability of controlling temperature of the samples, humidity of the degradation chamber, and illumination. Sample degradation can be followed by automated, color calibrated pictures. The implementation shown here accommodates 28 perovskite film samples. The aging chamber implemented according to the instructions typically $2,000-$5,000 depending on the amount of reused materials utilized in the process.
 
-This chamber is the Generation 1 chamber in an open-hardware project for developing degradation chambers for perovskite materials (see figure below). The project is described in detail in article: [insert details]
+This chamber is the Generation 1 chamber in our open-hardware project for developing degradation chambers for perovskite materials (see figure below) and is described in detail in our article:
+
+[1] Rodolfo Keesey, Armi Tiihonen, Alexander E. Siemenn, Thomas W. Colburn, Shijing Sun, Noor Titan Putri Hartono, James Serdy, Margaret Zeile, Keqing He, Cole A. Gurtner, Austin Cristobal Flick, Clio Batali, Alex Encinas, Richa R. Naik, Zhe Liu, Felipe Oviedo, I. Marius Peters, Janak Thapa, Siyu Isaac Parker Tian, Reinhold H. Dauskardt, Alexander Norquist, Tonio Buonassisi, "An Open-Source Environmental Chamber for Materials-Stability Testing Using an Optical Proxy", Digital Discovery, 2023, http://dx.doi.org/10.1039/D2DD00089J
 
 ![Degradation chamber generations in the open-hardware project. This repository describes MIT Gen. 1 chamber.](https://github.com/PV-Lab/hte_degradation_chamber/blob/main/Chamber_generations.png)
 
@@ -102,6 +104,7 @@ If you implement aging chambers or use the codes distributed in this repository,
       year = {2020}
     }
     
-    [insert article details here for the open hardware project]
+	Rodolfo Keesey, Armi Tiihonen, Alexander E. Siemenn, Thomas W. Colburn, Shijing Sun, Noor Titan Putri Hartono, James Serdy, Margaret Zeile, Keqing He, Cole A. Gurtner, Austin Cristobal Flick, Clio Batali, Alex Encinas, Richa R. Naik, Zhe Liu, Felipe Oviedo, I. Marius Peters, Janak Thapa, Siyu Isaac Parker Tian, Reinhold H. Dauskardt, Alexander Norquist, Tonio Buonassisi, "An Open-Source Environmental Chamber for Materials-Stability Testing Using an Optical Proxy", Digital Discovery, 2023, http://dx.doi.org/10.1039/D2DD00089J
+
     
     Shijing Sun, Armi Tiihonen, Felipe Oviedo, Zhe Liu, Janak Thapa, Yicheng Zhao, Noor Titan P. Hartono, Anuj Goyal, Thomas Heumueller, Clio Batali, Alex Encinas, Jason J. Yoo, Ruipeng Li, Zekun Ren, I. Marius Peters, Christoph J. Brabec, Moungi G. Bawendi, Vladan Stevanovic, John Fisher, Tonio Buonassisi, "A data fusion approach to optimize compositional stability of halide perovskites", Matter, 2021, https://doi.org/10.1016/j.matt.2021.01.008.
